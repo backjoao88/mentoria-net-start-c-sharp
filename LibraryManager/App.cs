@@ -15,8 +15,8 @@ namespace LibraryManager
                 {
                     Console.WriteLine("~ Load initial data (S/N)");
                     loadInitialData = ConsoleHandler.ReadStringValue();
-                } while (loadInitialData != "S" && loadInitialData != "N");
-                if (loadInitialData == "S")
+                } while (!"S".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase) && !"N".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase));
+                if ("S".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase))
                 {
                     using var dbUow = new EfUnitOfWork(new EfContext());
                     dbUow.BookData.Save(new Book(1, "Sun Tzu", "A arte da guerra", "8594318596", 2019));
