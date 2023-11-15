@@ -97,7 +97,55 @@ namespace LibraryManager
 
         public static int AskInput()
         {
-            int[] validInputs = { 1, 2, 3, 4, 5, 6, 99 };
+            int[] validInputs = { 1, 2, 3, 4, 5, 6, 7, 8, 99 };
+            var result = -1;
+            try
+            {
+                while (result == -1)
+                {
+                    result = ReadIntValue();
+                    if (!validInputs.Contains<int>(result))
+                    {
+                        result = -1;
+                        Console.WriteLine("Try a valid option. ");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unknown error. Error: " + ex.Message);
+                return -1;
+            }
+            return result;
+        }
+        
+        public static int AskFetchMenuInput()
+        {
+            int[] validInputs = { 1,2,0 };
+            var result = -1;
+            try
+            {
+                while (result == -1)
+                {
+                    result = ReadIntValue();
+                    if (!validInputs.Contains<int>(result))
+                    {
+                        result = -1;
+                        Console.WriteLine("Try a valid option. ");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unknown error. Error: " + ex.Message);
+                return -1;
+            }
+            return result;
+        }
+        
+        public static int AskFetchBorrowMenuInput()
+        {
+            int[] validInputs = { 1,2,0 };
             var result = -1;
             try
             {
@@ -122,12 +170,30 @@ namespace LibraryManager
         public static void ShowLibraryManagerMenu()
         {
             Console.WriteLine("~ Library Manager ~");
-            Console.WriteLine("1 - Save a Book");
-            Console.WriteLine("2 - Retrieve all books");
-            Console.WriteLine("3 - Remove a book");
-            Console.WriteLine("4 - Update a book");
-            Console.WriteLine("5 - Retrieve by Author");
+            Console.WriteLine("1 - Save a book");
+            Console.WriteLine("2 - Remove a book");
+            Console.WriteLine("3 - Update a book");
+            Console.WriteLine("4 - Save an user");
+            Console.WriteLine("5 - Save a borrow");
+            Console.WriteLine("6 - Fetch book");
+            Console.WriteLine("7 - Fetch borrow");
+            Console.WriteLine("8 - Fetch all users");
             Console.WriteLine("99 - Exit");
+        }
+
+        public static void ShowFetchMenu()
+        {
+            Console.WriteLine("~ Fetch book data ~");
+            Console.WriteLine("1 - Fetch all books");
+            Console.WriteLine("2 - Fetch book by author");
+            Console.WriteLine("0 - Go back"); 
+        }
+        
+        public static void ShowFetchBorrowMenu()
+        {
+            Console.WriteLine("~ Fetch borrow data ~");
+            Console.WriteLine("1 - Fetch all borrows");
+            Console.WriteLine("0 - Go back"); 
         }
     }
 }

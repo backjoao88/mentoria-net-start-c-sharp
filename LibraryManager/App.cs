@@ -3,6 +3,8 @@ using LibraryManager.Core.Data;
 using LibraryManager.Core.Models;
 using LibraryManager.Database;
 using LibraryManager.Database.Data;
+using LibraryManager.Validation.FluentValidation;
+using LibraryManager.Validation.MyValidation;
 namespace LibraryManager
 {
     public abstract class App
@@ -10,19 +12,19 @@ namespace LibraryManager
         public static void Main(string[] args)
         {
             {
-                var loadInitialData = "N";
-                do
-                {
-                    Console.WriteLine("~ Load initial data (S/N)");
-                    loadInitialData = ConsoleHandler.ReadStringValue();
-                } while (!"S".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase) && !"N".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase));
-                if ("S".Equals(loadInitialData, StringComparison.OrdinalIgnoreCase))
+                var loadInitialData = "S";
+                // do
+                // {
+                //     Console.WriteLine("~ Load initial data (S/N)");
+                //     loadInitialData = ConsoleHandler.ReadStringValue();
+                // } while (loadInitialData != "S" && loadInitialData != "N");
+                if (loadInitialData == "S")
                 {
                     using var dbUow = new EfUnitOfWork(new EfContext());
-                    dbUow.BookData.Save(new Book(1, "Sun Tzu", "A arte da guerra", "8594318596", 2019));
-                    dbUow.BookData.Save(
+                    dbUow.BookRepository.Save(new Book(1, "Sun Tzu", "A arte da guerra", "8594318596", 2019));
+                    dbUow.BookRepository.Save(
                         new Book(2, "Mans Mosesson", "Tim - The official autobiography of Avicii", "0751579009", 2021));
-                    dbUow.BookData.Save(new Book(3, "Carl Sagan", "Pálido ponto azul", "8535931937  ", 2019));
+                    dbUow.BookRepository.Save(new Book(3, "Carl Sagan", "Pálido ponto azul", "8535931937  ", 2019));
                     dbUow.Complete();
                 }
                 Console.Clear();
@@ -38,37 +40,61 @@ namespace LibraryManager
                     case 1:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var bookController = new BookController(dbUow);
+                        var bookValidator = new FluentBookValidation();
+                        var bookController = new BookController(dbUow, bookValidator);
                         bookController.Save();
                         break;
                     }
                     case 2:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var bookController = new BookController(dbUow);
-                        bookController.FindAll();
+                        var bookValidator = new MyBookValidation();
+                        var bookController = new BookController(dbUow, bookValidator);
+                        bookController.Remove();
                         break;
                     }
                     case 3:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var bookController = new BookController(dbUow);
-                        bookController.Remove();
+                        var bookValidator = new MyBookValidation();
+                        var bookController = new BookController(dbUow, bookValidator);
+                        bookController.Update();
                         break;
                     }
                     case 4:
                     {
-
-                        using var uow = new EfUnitOfWork(new EfContext());
-                        var bookController = new BookController(uow);
-                        bookController.Update();
+                        using var dbUow = new EfUnitOfWork(new EfContext());
+                        var userController = new UserController(dbUow);
+                        userController.Save();
                         break;
                     }
                     case 5:
                     {
-                        using var uow = new EfUnitOfWork(new EfContext());
-                        var bookController = new BookController(uow);
-                        bookController.FindByAuthor();
+                        using var dbUow = new EfUnitOfWork(new EfContext());
+                        var borrowController = new BorrowController(dbUow);
+                        borrowController.Save();
+                        break;
+                    }
+                    case 6:
+                    {
+                        using var dbUow = new EfUnitOfWork(new EfContext());
+                        var bookValidator = new MyBookValidation();
+                        var bookController = new BookController(dbUow, bookValidator);
+                        bookController.Fetch();
+                        break;
+                    }
+                    case 7:
+                    {
+                        using var dbUow = new EfUnitOfWork(new EfContext());
+                        var borrowController = new BorrowController(dbUow);
+                        borrowController.Fetch();
+                        break;
+                    }
+                    case 8:
+                    {
+                        using var dbUow = new EfUnitOfWork(new EfContext());
+                        var userController = new UserController(dbUow);
+                        userController.Fetch();
                         break;
                     }
                     case 99:

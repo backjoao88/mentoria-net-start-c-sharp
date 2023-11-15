@@ -6,12 +6,18 @@ namespace LibraryManager.Database
     public class EfUnitOfWork : IUnitOfWork, IDisposable
     {
         readonly EfContext _efContext;
-        public IBookData BookData { get; private set; }
+        public IBookRepository BookRepository { get; }
+        
+        public IUserRepository UserRepository { get; }
+        
+        public IBorrowRepository BorrowRepository { get; }
 
         public EfUnitOfWork(EfContext efContext)
         {
             _efContext = efContext;
-            BookData = new BookData(efContext);
+            BookRepository = new BookRepository(efContext);
+            UserRepository = new UserRepository(efContext);
+            BorrowRepository = new BorrowRepository(efContext);
         }
 
         public int Complete()
