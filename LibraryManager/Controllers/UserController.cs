@@ -1,13 +1,18 @@
 using LibraryManager.Core;
 using LibraryManager.Core.Models;
+using LibraryManager.Core.Validation;
+using Microsoft.AspNetCore.Identity;
+
 namespace LibraryManager.Controllers
 {
     public class UserController
     {
-        readonly IUnitOfWork _unitOfWork;
-        public UserController(IUnitOfWork unitOfWork)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IValidation<User> _validation;
+        public UserController(IUnitOfWork unitOfWork, IValidation<User> validation)
         {
             _unitOfWork = unitOfWork;
+            _validation = validation;
         }
         
         void PressKey()
@@ -27,6 +32,14 @@ namespace LibraryManager.Controllers
                 string name = ConsoleHandler.ReadNonNullStringValue("Input the user name: ");
                 string email = ConsoleHandler.ReadNonNullStringValue("Input the user e-mail: ");
                 User user = new User(id, name, email);
+                var validationResult = _validation.IsValid(user);
+                if (!validationResult.IsSuccess)
+                {
+                    Console.WriteLine(validationResult.Message);
+                    PressKey();
+                    return;
+                }
+                
                 _unitOfWork.UserRepository.Save(user);
                 _unitOfWork.Complete();
                 Console.WriteLine("~ User added successfully.");

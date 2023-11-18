@@ -27,11 +27,7 @@ namespace LibraryManager.Database.Data
 
         public List<Borrow> FindAll()
         {
-            var borrows = _efContext.Borrows.Select(o => new Borrow(o.Id, o.IdUser, o.IdBook, o.Start)
-            {
-                Book = _efContext.Books.SingleOrDefault(book => book.Id == o.IdBook),
-                User = _efContext.Users.SingleOrDefault(user => user.Id == o.IdUser)
-            });
+            var borrows = _efContext.Borrows.Include(o => o.Book).Include(o => o.User);
             return borrows.ToList();
         }
 

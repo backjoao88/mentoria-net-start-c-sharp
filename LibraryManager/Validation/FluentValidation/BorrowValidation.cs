@@ -6,9 +6,9 @@ namespace LibraryManager.Validation.FluentValidation
 {
     public class BorrowValidation : AbstractValidator<Borrow>, IValidation<Borrow>
     {
-        readonly IBorrowRepository _borrowRepository;
-        readonly IBookRepository _bookRepository;
-        readonly IUserRepository _userRepository;
+        private readonly IBorrowRepository _borrowRepository;
+        private readonly IBookRepository _bookRepository;
+        private readonly IUserRepository _userRepository;
 
         public BorrowValidation(IBorrowRepository borrowRepository, IBookRepository bookRepository, IUserRepository userRepository)
         {
@@ -23,42 +23,27 @@ namespace LibraryManager.Validation.FluentValidation
         bool ExistsUserOnDatabase(int id)
         {
             var user = _userRepository.Find(u => u.Id == id).SingleOrDefault();
-            if (user == null)
-            {
-                return false;
-            }
-            return true;
+            return user != null;
         }
 
         bool ExistsBookOnDatabase(int id)
         {
             var book = _bookRepository.Find(o => o.Id == id).SingleOrDefault();
-            if (book == null)
-            {
-                return false;
-            }
-            return true;
+            return book != null;
         }
 
         bool BeUniqueOnDatabase(int id)
         {
             var borrow = _borrowRepository.Find(o => o.Id == id).SingleOrDefault();
-            if (borrow == null)
-            {
-                return true;
-            }
-            return false;
+            return borrow == null;
         }
-
-
+        
         public ValidationResult IsValid(Borrow entity)
         {
             var fluentValidation = Validate(entity);
-            if (!fluentValidation.IsValid)
-            {
-                return new ValidationResult(false, string.Join(" ", fluentValidation.Errors));
-            }
-            return new ValidationResult(true, "");
+            return fluentValidation.IsValid
+                ? new ValidationResult(true, "")
+                : new ValidationResult(false, string.Join(" ", fluentValidation.Errors));
         }
     }
 }

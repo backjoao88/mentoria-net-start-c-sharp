@@ -5,6 +5,8 @@ namespace LibraryManager.Core.Models
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
+        
+        public List<Borrow> Borrows { get; private set; }
 
         public User(int id, string name, string email)
         {

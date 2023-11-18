@@ -66,7 +66,8 @@ namespace LibraryManager
                     case 4:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var userController = new UserController(dbUow);
+                        var userValidator = new UserValidation(dbUow.UserRepository);
+                        var userController = new UserController(dbUow, userValidator);
                         userController.Save();
                         break;
                     }
@@ -97,7 +98,8 @@ namespace LibraryManager
                     case 8:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var userController = new UserController(dbUow);
+                        var userValidator = new UserValidation(dbUow.UserRepository);
+                        var userController = new UserController(dbUow, userValidator);
                         userController.Fetch();
                         break;
                     }

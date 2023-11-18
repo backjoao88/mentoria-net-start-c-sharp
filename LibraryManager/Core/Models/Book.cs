@@ -8,6 +8,8 @@ namespace LibraryManager.Core.Models
         public string Isbn { get; private set; }
         public int PublicationYear { get; private set; }
         
+        public List<Borrow> Borrows { get; private set; }
+        
         public Book(int id, string author, string title, string isbn, int publicationYear)
         {
             Id = id;

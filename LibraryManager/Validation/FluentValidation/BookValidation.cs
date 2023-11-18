@@ -7,9 +7,7 @@ namespace LibraryManager.Validation.FluentValidation
 {
     public class BookValidation : AbstractValidator<Book>, IValidation<Book>
     {
-
-        readonly IBookRepository _bookRepository;
-
+        private readonly IBookRepository _bookRepository;
         public BookValidation(IBookRepository bookRepository)
         {
             this._bookRepository = bookRepository;
@@ -23,30 +21,20 @@ namespace LibraryManager.Validation.FluentValidation
         bool BeUniqueOnDatabase(int id)
         {
             var book = _bookRepository.Find(b => b.Id == id).SingleOrDefault();
-            if (book == null)
-            {
-                return true;
-            }
-            return false;
+            return book == null;
         }
 
         bool BeAValidPublicationYear(int publicationYear)
         {
-            if (publicationYear < 0)
-            {
-                return false;
-            }
-            return true;
+            return publicationYear > 0;
         }
 
         public ValidationResult IsValid(Book entity)
         {
             var fluentValidation = Validate(entity);
-            if (!fluentValidation.IsValid)
-            {
-                return new ValidationResult(false, string.Join(" ", fluentValidation.Errors));
-            }
-            return new ValidationResult(true, "");
+            return fluentValidation.IsValid 
+                ? new ValidationResult(true, "") 
+                : new ValidationResult(false, string.Join(" ", fluentValidation.Errors));
         }
     }
 }
