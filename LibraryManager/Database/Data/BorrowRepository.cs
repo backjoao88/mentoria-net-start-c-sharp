@@ -1,6 +1,8 @@
 using System.Linq.Expressions;
 using LibraryManager.Core.Data;
 using LibraryManager.Core.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 namespace LibraryManager.Database.Data
 {
     public class BorrowRepository : IBorrowRepository
@@ -25,7 +27,12 @@ namespace LibraryManager.Database.Data
 
         public List<Borrow> FindAll()
         {
-            return _efContext.Borrows.ToList();
+            var borrows = _efContext.Borrows.Select(o => new Borrow(o.Id, o.IdUser, o.IdBook, o.Start)
+            {
+                Book = _efContext.Books.SingleOrDefault(book => book.Id == o.IdBook),
+                User = _efContext.Users.SingleOrDefault(user => user.Id == o.IdUser)
+            });
+            return borrows.ToList();
         }
 
         public List<Borrow> Find(Expression<Func<Borrow, bool>> predicate)

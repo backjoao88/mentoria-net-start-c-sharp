@@ -1,20 +1,21 @@
-using System;
-namespace AwesomeDevEvents.Models
+namespace AwesomeDevEvents.Core.Models
 {
-    public class DevEvents
+    public class DevEvent
     {
-        public Guid Id { get; private set; }
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public string TalkTitle { get; private set; }
         public string TalkDescription { get; private set; }
+        public bool IsDeleted { get; set; }
 
-        public DevEvents(Guid id, string name, string talkTitle, string talkDescription)
+        public DevEvent(int id, string name, string talkTitle, string talkDescription)
         {
             Id = id;
             Name = name;
             TalkTitle = talkTitle;
             TalkDescription = talkDescription;
+            IsDeleted = false;
         }
-        
+
     }
 }

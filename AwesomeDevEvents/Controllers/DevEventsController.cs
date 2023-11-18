@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AwesomeDevEvents.Models;
+using AwesomeDevEvents.Core;
+using AwesomeDevEvents.Core.Models;
 using AwesomeDevEvents.Persistence;
 using Microsoft.AspNetCore.Mvc;
 namespace AwesomeDevEvents.Controllers
@@ -10,26 +11,32 @@ namespace AwesomeDevEvents.Controllers
     [ApiController]
     public class DevEventsController : ControllerBase
     {
-
-        readonly DevEventsDbContext _devEventsDbContext;
-
-        public DevEventsController(DevEventsDbContext devEventsDbContext)
+        readonly IUnitOfWork _unitOfWork;
+        public DevEventsController(IUnitOfWork unitOfWork)
         {
-            this._devEventsDbContext = devEventsDbContext;
+            this._unitOfWork = unitOfWork;
         }
         
         [HttpGet]
         public IActionResult GetAll()
         {
-            var devEvents = _devEventsDbContext.DevEvents.ToList();
+            var devEvents = _unitOfWork.DevEventRepository.FindAll();
             return Ok(devEvents);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public IActionResult GetById(int id)
         {
-            var devEvent = _devEventsDbContext.DevEvents.Where((d) => d.Id == id);
+            var devEvent = _unitOfWork.DevEventRepository.FindById(id);
             return Ok(devEvent);
+        }
+
+        [HttpPost]
+        public IActionResult Post(DevEvent devEvent)
+        {
+            _unitOfWork.DevEventRepository.Save(devEvent);
+            _unitOfWork.Complete();
+            return CreatedAtAction(nameof(GetById), new { id = devEvent.Id }, devEvent);
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/LibraryManager.csproj": {}
+    "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/LibraryManager.csproj": {}
   },
   "projects": {
-    "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/LibraryManager.csproj": {
+    "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/LibraryManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/LibraryManager.csproj",
+        "projectUniqueName": "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/LibraryManager.csproj",
         "projectName": "LibraryManager",
-        "projectPath": "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/LibraryManager.csproj",
+        "projectPath": "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/LibraryManager.csproj",
         "packagesPath": "/home/back/.nuget/packages/",
-        "outputPath": "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/obj/",
+        "outputPath": "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/back/.nuget/NuGet/NuGet.Config"

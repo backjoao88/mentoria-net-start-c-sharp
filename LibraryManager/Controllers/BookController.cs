@@ -1,18 +1,18 @@
 using LibraryManager.Core;
 using LibraryManager.Core.Data;
 using LibraryManager.Core.Models;
-using LibraryManager.Core.Validations;
+using LibraryManager.Core.Validation;
 namespace LibraryManager.Controllers
 {
     public class BookController
     {
-        IUnitOfWork UnitOfWork { get; }
-        IValidation<Book> Validation { get; }
+        readonly IUnitOfWork _unitOfWork;
+        readonly IValidation<Book> _validation;
 
         public BookController(IUnitOfWork unitOfWork, IValidation<Book> validation)
         {
-            UnitOfWork = unitOfWork;
-            Validation = validation;
+            _unitOfWork = unitOfWork;
+            _validation = validation;
         }
 
         void PressKey()
@@ -33,26 +33,18 @@ namespace LibraryManager.Controllers
             var publicationYear = ConsoleHandler.ReadNonNullIntValue("Input the book publication year: ");
             var book = new Book(id, author, title, isbn, publicationYear);
 
-            var bookIsValid = false;
-            try
+            var validationResult = _validation.IsValid(book);
+            if (!validationResult.IsSuccess)
             {
-                bookIsValid = Validation.IsValid(book);
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"An error occurred while trying to validate the input model. Error: {exception.Message}");
-            }
-            if (!bookIsValid)
-            {
+                Console.WriteLine(validationResult.Message);
                 PressKey();
                 return;
             }
 
-
             try
             {
-                UnitOfWork.BookRepository.Save(book);
-                UnitOfWork.Complete();
+                _unitOfWork.BookRepository.Save(book);
+                _unitOfWork.Complete();
                 Console.WriteLine("~ Book added successfully.");
             }
             catch (Exception exception)
@@ -67,7 +59,7 @@ namespace LibraryManager.Controllers
         {
             Console.Clear();
             Console.WriteLine("~ List of stored books ~");
-            var data = UnitOfWork.BookRepository.FindAll();
+            var data = _unitOfWork.BookRepository.FindAll();
             if (data.Any())
                 foreach (var book in data)
                 {
@@ -88,7 +80,7 @@ namespace LibraryManager.Controllers
                         Console.Clear();
                         return;
                     }
-                    foundBook = UnitOfWork.BookRepository.Find((book) => book.Id == id).First();
+                    foundBook = _unitOfWork.BookRepository.Find((book) => book.Id == id).First();
                     tryAgain = false;
                 }
                 catch (Exception exception)
@@ -103,11 +95,15 @@ namespace LibraryManager.Controllers
             var newIsbn = ConsoleHandler.ReadStringValue($"Input the new book ISBN (empty to keep \"{foundBook.Isbn}\"): ");
             var newPublicationYear =
                 ConsoleHandler.ReadIntValue($"Input the new book publication year (empty to keep \"{foundBook.PublicationYear}\"): ");
-            foundBook.Title = newTitle.Any() ? newTitle : foundBook.Title;
-            foundBook.Author = newAuthor.Any() ? newAuthor : foundBook.Author;
-            foundBook.Isbn = newIsbn.Any() ? newIsbn : foundBook.Isbn;
-            foundBook.PublicationYear = newPublicationYear != 0 ? newPublicationYear : foundBook.PublicationYear;
-            UnitOfWork.Complete();
+
+            foundBook.Update(
+                newTitle.Any() ? newTitle : foundBook.Title,
+                newAuthor.Any() ? newAuthor : foundBook.Author,
+                newIsbn.Any() ? newIsbn : foundBook.Isbn,
+                newPublicationYear != 0 ? newPublicationYear : foundBook.PublicationYear
+            );
+
+            _unitOfWork.Complete();
             PressKey();
         }
 
@@ -115,7 +111,7 @@ namespace LibraryManager.Controllers
         {
             Console.Clear();
             Console.WriteLine("~ List of stored books ~");
-            var data = UnitOfWork.BookRepository.FindAll();
+            var data = _unitOfWork.BookRepository.FindAll();
             if (data.Any())
                 foreach (var book in data)
                 {
@@ -164,7 +160,7 @@ namespace LibraryManager.Controllers
                 try
                 {
                     Console.WriteLine("~ List of stored books ~");
-                    var data = UnitOfWork.BookRepository.FindAll();
+                    var data = _unitOfWork.BookRepository.FindAll();
                     if (data.Any())
                     {
                         foreach (var b in data)
@@ -184,7 +180,7 @@ namespace LibraryManager.Controllers
                         Console.Clear();
                         return;
                     }
-                    book = UnitOfWork.BookRepository.Find((b) => b.Id == id).First();
+                    book = _unitOfWork.BookRepository.Find((b) => b.Id == id).First();
                     tryAgainList = false;
                 }
                 catch (Exception exception)
@@ -201,8 +197,8 @@ namespace LibraryManager.Controllers
             try
             {
                 Console.WriteLine($"~ Removing book: {book.ToString()}");
-                UnitOfWork.BookRepository.Remove(book);
-                UnitOfWork.Complete();
+                _unitOfWork.BookRepository.Remove(book);
+                _unitOfWork.Complete();
                 Console.WriteLine("~ Book removed successfully.");
             }
             catch (Exception e)
@@ -219,7 +215,7 @@ namespace LibraryManager.Controllers
             Console.Clear();
             Console.WriteLine("~ Find book by author ~");
             var findAuthor = ConsoleHandler.ReadStringValue("Input the book author name: ");
-            var booksByAuthor = UnitOfWork.BookRepository.Find((book) =>
+            var booksByAuthor = _unitOfWork.BookRepository.Find((book) =>
                 book != null && book.Author.StartsWith(findAuthor, StringComparison.OrdinalIgnoreCase));
             Console.Clear();
             Console.WriteLine("~ List of books by author");

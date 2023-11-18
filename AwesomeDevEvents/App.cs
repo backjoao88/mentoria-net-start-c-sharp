@@ -1,7 +1,13 @@
 using System;
-using AwesomeDevEvents.Models;
+using AwesomeDevEvents.Core;
+using AwesomeDevEvents.Core.Models;
+using AwesomeDevEvents.Core.Repositories;
 using AwesomeDevEvents.Persistence;
+using AwesomeDevEvents.Persistence.Ef;
+using AwesomeDevEvents.Persistence.Ef.Repositories;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace AwesomeDevEvents;
 
@@ -10,16 +16,13 @@ public abstract class App
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddSingleton<DevEventsDbContext>();
+        var connectionString = builder.Configuration.GetConnectionString("DevEventsCs");
+        builder.Services.AddDbContext<DevEventsDbContext>(o => o.UseSqlServer(connectionString));
+        builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddTransient<IDevEventRepository, DevEventRepository>();
         builder.Services.AddControllers();
         var app = builder.Build();
         app.MapControllers();
-        var dbContext = (DevEventsDbContext)app.Services.GetService(typeof(DevEventsDbContext)) ?? new DevEventsDbContext();
-        dbContext.DevEvents.Add(new DevEvents(Guid.NewGuid(), "Sérgio Sacani", "Astronomia na atualidade",
-            $"Na verdade ele irá fazer um treino de perna com a galera"));
-        dbContext.DevEvents.Add(new DevEvents(Guid.NewGuid(), "Eslen Delanogate", "Psicologia comportamental",
-            $"Efeitos da psicologia comportamental"));
-        dbContext.SaveChanges();
         app.Run();
     }
 }

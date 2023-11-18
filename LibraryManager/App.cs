@@ -25,6 +25,8 @@ namespace LibraryManager
                     dbUow.BookRepository.Save(
                         new Book(2, "Mans Mosesson", "Tim - The official autobiography of Avicii", "0751579009", 2021));
                     dbUow.BookRepository.Save(new Book(3, "Carl Sagan", "Pálido ponto azul", "8535931937  ", 2019));
+                    dbUow.UserRepository.Save(new User(1, "João", "joao@gmail.com"));
+                    dbUow.BorrowRepository.Save(new Borrow(1, 1, 1, new DateTime()));
                     dbUow.Complete();
                 }
                 Console.Clear();
@@ -40,7 +42,7 @@ namespace LibraryManager
                     case 1:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var bookValidator = new FluentBookValidation();
+                        var bookValidator = new BookValidation(dbUow.BookRepository);
                         var bookController = new BookController(dbUow, bookValidator);
                         bookController.Save();
                         break;
@@ -71,7 +73,8 @@ namespace LibraryManager
                     case 5:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var borrowController = new BorrowController(dbUow);
+                        var borrowValidator = new BorrowValidation(dbUow.BorrowRepository, dbUow.BookRepository, dbUow.UserRepository);
+                        var borrowController = new BorrowController(dbUow, borrowValidator);
                         borrowController.Save();
                         break;
                     }
@@ -86,7 +89,8 @@ namespace LibraryManager
                     case 7:
                     {
                         using var dbUow = new EfUnitOfWork(new EfContext());
-                        var borrowController = new BorrowController(dbUow);
+                        var borrowValidator = new BorrowValidation(dbUow.BorrowRepository, dbUow.BookRepository, dbUow.UserRepository);
+                        var borrowController = new BorrowController(dbUow, borrowValidator);
                         borrowController.Fetch();
                         break;
                     }

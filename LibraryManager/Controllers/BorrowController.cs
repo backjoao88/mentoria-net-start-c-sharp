@@ -1,15 +1,19 @@
 using LibraryManager.Core;
+using LibraryManager.Core.Data;
 using LibraryManager.Core.Models;
+using LibraryManager.Core.Validation;
 namespace LibraryManager.Controllers
 {
     public class BorrowController
     {
-        
-        IUnitOfWork UnitOfWork { get; }
 
-        public BorrowController(IUnitOfWork unitOfWork)
+        readonly IUnitOfWork _unitOfWork;
+        readonly IValidation<Borrow> _validation;
+
+        public BorrowController(IUnitOfWork unitOfWork, IValidation<Borrow> validation)
         {
-            UnitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
+            _validation = validation;
         }
         
         void PressKey()
@@ -45,7 +49,7 @@ namespace LibraryManager.Controllers
         {
             Console.Clear();
             Console.WriteLine("~ List of stored borrows ~");
-            var data = UnitOfWork.BorrowRepository.FindAll();
+            var data = _unitOfWork.BorrowRepository.FindAll();
             if (data.Any())
                 foreach (var borrow in data)
                 {
@@ -59,18 +63,53 @@ namespace LibraryManager.Controllers
         public void Save()
         {
             Console.Clear();
-            Console.WriteLine("~ Save an user ~");
+            Console.WriteLine("~ Save a borrow ~");
             try
             {
                 int id = ConsoleHandler.ReadNonNullIntValue("Input the borrow ID: ");
+                var usersData = _unitOfWork.UserRepository.FindAll();
+                if (usersData.Any())
+                {
+                    foreach (var user in usersData)
+                    {
+                        Console.WriteLine(user.ToString());
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No user found.");
+                    PressKey();
+                    return;
+                }
                 int idUser = ConsoleHandler.ReadNonNullIntValue("Input the user ID: ");
+                var booksData = _unitOfWork.BookRepository.FindAll();
+                if (booksData.Any())
+                {
+                    foreach (var book in booksData)
+                    {
+                        Console.WriteLine(book.ToString());
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No book found.");
+                    PressKey();
+                    return;
+                }
                 int idBook = ConsoleHandler.ReadNonNullIntValue("Input the book ID: ");
                 DateTime start = DateTime.Now;
-                DateTime end = DateTime.Now.AddDays(5); // mudar
-                Borrow borrow = new Borrow(id, idUser, idBook, start, end);
-                UnitOfWork.BorrowRepository.Save(borrow);
-                UnitOfWork.Complete();
-                Console.WriteLine("~ User added successfully.");
+                Borrow borrow = new Borrow(id, idUser, idBook, start);
+                
+                var validationResult = _validation.IsValid(borrow);
+                if (!validationResult.IsSuccess)
+                {
+                    Console.WriteLine(validationResult.Message);
+                    PressKey();
+                    return;
+                }
+                _unitOfWork.BorrowRepository.Save(borrow);
+                _unitOfWork.Complete();
+                Console.WriteLine("~ Borrow added successfully.");
             }
             catch (Exception exception)
             {

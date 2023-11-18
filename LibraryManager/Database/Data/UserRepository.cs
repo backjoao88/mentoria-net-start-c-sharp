@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using LibraryManager.Core.Data;
 using LibraryManager.Core.Models;
 namespace LibraryManager.Database.Data
@@ -20,6 +21,11 @@ namespace LibraryManager.Database.Data
         public void Remove(User user)
         {
             _efContext.Remove(user);
+        }
+
+        public List<User> Find(Expression<Func<User, bool>> predicate)
+        {
+            return _efContext.Users.Where(predicate).ToList();
         }
 
         public List<User> FindAll()

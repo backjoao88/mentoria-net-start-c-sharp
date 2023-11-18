@@ -4,10 +4,10 @@ namespace LibraryManager.Controllers
 {
     public class UserController
     {
-        IUnitOfWork UnitOfWork { get; }
+        readonly IUnitOfWork _unitOfWork;
         public UserController(IUnitOfWork unitOfWork)
         {
-            UnitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
         
         void PressKey()
@@ -27,8 +27,8 @@ namespace LibraryManager.Controllers
                 string name = ConsoleHandler.ReadNonNullStringValue("Input the user name: ");
                 string email = ConsoleHandler.ReadNonNullStringValue("Input the user e-mail: ");
                 User user = new User(id, name, email);
-                UnitOfWork.UserRepository.Save(user);
-                UnitOfWork.Complete();
+                _unitOfWork.UserRepository.Save(user);
+                _unitOfWork.Complete();
                 Console.WriteLine("~ User added successfully.");
             }
             catch (Exception exception)
@@ -42,7 +42,7 @@ namespace LibraryManager.Controllers
         {
             Console.Clear();
             Console.WriteLine("~ List of stored users ~");
-            var data = UnitOfWork.UserRepository.FindAll();
+            var data = _unitOfWork.UserRepository.FindAll();
             if (data.Any())
                 foreach (var user in data)
                 {

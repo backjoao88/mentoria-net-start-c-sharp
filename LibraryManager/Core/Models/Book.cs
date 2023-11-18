@@ -2,11 +2,11 @@ namespace LibraryManager.Core.Models
 {
     public class Book
     {
-        public int Id { get; set; }
-        public string Author { get; set; }
-        public string Title { get; set; }
-        public string Isbn { get; set; }
-        public int PublicationYear { get; set; }
+        public int Id { get; private set; }
+        public string Author { get; private set; }
+        public string Title { get; private set; }
+        public string Isbn { get; private set; }
+        public int PublicationYear { get; private set; }
         
         public Book(int id, string author, string title, string isbn, int publicationYear)
         {
@@ -15,6 +15,14 @@ namespace LibraryManager.Core.Models
             Title = title;
             Isbn = isbn;
             PublicationYear = publicationYear;
+        }
+
+        public void Update(string author, string title, string isbn, int publicationYear)
+        {
+            this.Author = author;
+            this.Title = title;
+            this.Isbn = isbn;
+            this.PublicationYear = publicationYear;
         }
         
         public override string ToString()

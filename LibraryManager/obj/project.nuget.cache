@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8F5hp/CEI9zEhAWSZn+DUIi0McRYjzN5dwdixRbVcaCKQPjfa8mokjKhNWpc3cluJziuDfYhh5aPKMAo0TEaig==",
+  "dgSpecHash": "pcK3cgg68G3EfFCFc++yaFyraZHFiZmZBAHmbVOb4Ky6gncfY/q7Di2liTjD5VKre1TcZEx1YrXxreEZtUj9NA==",
   "success": true,
-  "projectFilePath": "/home/back/RiderProjects/MentoriaNetStart/LibraryManager/LibraryManager.csproj",
+  "projectFilePath": "/home/back/RiderProjects/mentoria-net-start-c-sharp/LibraryManager/LibraryManager.csproj",
   "expectedPackageFiles": [
     "/home/back/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/home/back/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
