@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeDevEvents", "AwesomeDevEvents\AwesomeDevEvents.csproj", "{18F17E37-75A3-4E46-A0A6-DEA52E9E7220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager", "LibraryManager\LibraryManager.csproj", "{A260DBE2-7205-4504-B556-F567659A6C46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagerConsole", "LibraryManagerConsole\LibraryManagerConsole.csproj", "{A260DBE2-7205-4504-B556-F567659A6C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
