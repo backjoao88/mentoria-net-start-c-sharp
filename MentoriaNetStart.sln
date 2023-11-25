@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeDevEvents", "Awesome
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagerConsole", "LibraryManagerConsole\LibraryManagerConsole.csproj", "{A260DBE2-7205-4504-B556-F567659A6C46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagerApi", "LibraryManagerApi\LibraryManagerApi.csproj", "{98BB3C4C-E469-49DC-AAF1-333582E5AE5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{A260DBE2-7205-4504-B556-F567659A6C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A260DBE2-7205-4504-B556-F567659A6C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A260DBE2-7205-4504-B556-F567659A6C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98BB3C4C-E469-49DC-AAF1-333582E5AE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98BB3C4C-E469-49DC-AAF1-333582E5AE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98BB3C4C-E469-49DC-AAF1-333582E5AE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98BB3C4C-E469-49DC-AAF1-333582E5AE5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
