@@ -1,6 +1,8 @@
+using LibraryManagerApi.Core.Entities;
+
 namespace LibraryManagerApi.Core.Repositories;
 
-public interface ILoanRepository
+public interface ILoanRepository : IRepository<Loan>
 {
     
 }
