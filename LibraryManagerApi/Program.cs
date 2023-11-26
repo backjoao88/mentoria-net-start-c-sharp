@@ -1,4 +1,5 @@
-﻿using LibraryManagerApi.Core;
+﻿using System.Text.Json.Serialization;
+using LibraryManagerApi.Core;
 using LibraryManagerApi.Core.Entities;
 using LibraryManagerApi.Core.Models.InputModels;
 using LibraryManagerApi.Core.Models.ViewModels;
@@ -32,7 +33,9 @@ public abstract class Program
         
         // Validations
         builder.Services.AddScoped<IValidation<BookInputModel>, BookValidation>();
-        
+        builder.Services.AddScoped<IValidation<UserInputModel>, UserValidation>();
+        builder.Services.AddScoped<IValidation<LoanInputModel>, LoanValidation>();
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(o =>
         {

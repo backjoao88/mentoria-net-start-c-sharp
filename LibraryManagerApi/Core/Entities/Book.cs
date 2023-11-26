@@ -7,7 +7,6 @@ public class Book
     public string Author { get; private set; } = null!;
     public string Isbn { get; private set; } = null!;
     public int PublicationYear { get; private set; }
-   
     public bool IsDeleted { get; private set; }
 
     public Book()

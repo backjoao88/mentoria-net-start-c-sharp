@@ -12,9 +12,9 @@ namespace LibraryManagerApi.Controllers;
 [Route("/api/books")]
 public class BookController : ControllerBase
 {
-    private readonly IMapper _mapper;
-    private readonly IValidation<BookInputModel> _validation;
-    private readonly IUnitOfWork _unitOfWork;
+    readonly IMapper _mapper;
+    readonly IValidation<BookInputModel> _validation;
+    readonly IUnitOfWork _unitOfWork;
 
     public BookController(IMapper mapper, IValidation<BookInputModel> validation, IUnitOfWork unitOfWork)
     {
@@ -23,6 +23,10 @@ public class BookController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
+    /// <summary>
+    /// Endpoint used saving a new book
+    /// </summary>
+    /// <returns>All books</returns>
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -42,7 +46,7 @@ public class BookController : ControllerBase
     
     
     /// <summary>
-    /// Endpoints used for retrieving all books
+    /// Endpoint used for retrieving all books
     /// </summary>
     /// <returns>All books</returns>
     [HttpGet]
@@ -59,7 +63,7 @@ public class BookController : ControllerBase
     }
 
     /// <summary>
-    /// Endpoints used for retrieving a specified book
+    /// Endpoint used for retrieving a specified book
     /// </summary>
     /// <returns>All books</returns>
     [HttpGet("{id}")]
@@ -78,7 +82,7 @@ public class BookController : ControllerBase
 
 
     /// <summary>
-    /// Endpoints used for updating a specified book
+    /// Endpoint used for updating a specified book
     /// </summary>
     /// <returns>Nothing</returns>
     [HttpPut("{id}")]
@@ -104,7 +108,7 @@ public class BookController : ControllerBase
     }
     
     /// <summary>
-    /// Endpoints used for removing a specified book
+    /// Endpoint used for removing a specified book
     /// </summary>
     /// <returns>Nothing</returns>
     [HttpDelete("{id}")]

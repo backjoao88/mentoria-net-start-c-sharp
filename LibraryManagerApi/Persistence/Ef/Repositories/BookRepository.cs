@@ -9,8 +9,13 @@ public class BookRepository : Repository<Book>, IBookRepository
     {
     }
 
+    public new IEnumerable<Book> FindAll()
+    {
+        return Context.Set<Book>().Where(o => !o.IsDeleted).ToList();
+    }
+
     public Book? FindById(Guid id)
     {
-        return Context.Set<Book>().SingleOrDefault(o => o.Id == id);
+        return Context.Set<Book>().SingleOrDefault(o => !o.IsDeleted && o.Id == id);
     }
 }
