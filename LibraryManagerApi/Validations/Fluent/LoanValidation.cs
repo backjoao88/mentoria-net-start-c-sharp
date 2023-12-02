@@ -10,24 +10,24 @@ namespace LibraryManagerApi.Validations.Fluent
     {
 
         readonly IBookRepository _bookRepository;
-        readonly IBookRepository _userRepository;
+        readonly IUserRepository _userRepository;
 
-        public LoanValidation(IBookRepository bookRepository, IBookRepository userRepository)
+        public LoanValidation(IBookRepository bookRepository, IUserRepository userRepository)
         {
             _bookRepository = bookRepository;
             _userRepository = userRepository;
             RuleFor(o => o.IdBook).NotEmpty();
             RuleFor(o => o.IdUser).NotEmpty();
             RuleFor(o => o.IdBook).Must(ExistsBookOnDatabase).WithMessage("This book doesn't exist.");
-            RuleFor(o => o.IdBook).Must(ExistsUserOnDatabase).WithMessage("This user doesn't exist.");
+            RuleFor(o => o.IdUser).Must(ExistsUserOnDatabase).WithMessage("This user doesn't exist.");
         }
 
-        bool ExistsUserOnDatabase(Guid id)
+        bool ExistsUserOnDatabase(int id)
         {
             return _userRepository.FindById(id) != null;
         }
 
-        bool ExistsBookOnDatabase(Guid id)
+        bool ExistsBookOnDatabase(int id)
         {
             return _bookRepository.FindById(id) != null;
         }

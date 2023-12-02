@@ -15,7 +15,6 @@ public class BookController : ControllerBase
     readonly IMapper _mapper;
     readonly IValidation<BookInputModel> _validation;
     readonly IUnitOfWork _unitOfWork;
-
     public BookController(IMapper mapper, IValidation<BookInputModel> validation, IUnitOfWork unitOfWork)
     {
         _mapper = mapper;
@@ -37,13 +36,11 @@ public class BookController : ControllerBase
         {
             return BadRequest(validationResult.Message);
         }
-
         var book = _mapper.Map<BookInputModel, Book>(bookInputModel);
         _unitOfWork.BookRepository.Save(book);
         _unitOfWork.Complete();
         return Created(nameof(Save), book);
     }
-    
     
     /// <summary>
     /// Endpoint used for retrieving all books
@@ -68,7 +65,7 @@ public class BookController : ControllerBase
     /// <returns>All books</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public IActionResult GetById(Guid id)
+    public IActionResult GetById(int id)
     {
         var book = _unitOfWork.BookRepository.FindById(id);
         if (book is null)
@@ -86,9 +83,9 @@ public class BookController : ControllerBase
     /// </summary>
     /// <returns>Nothing</returns>
     [HttpPut("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Update(Guid id, BookInputModel bookInputModel)
+    public IActionResult Update(int id, BookInputModel bookInputModel)
     {
         var book = _unitOfWork.BookRepository.FindById(id);
         if (book is null)
@@ -104,7 +101,7 @@ public class BookController : ControllerBase
         );
         
         _unitOfWork.Complete();
-        return Ok();
+        return NoContent();
     }
     
     /// <summary>
@@ -114,7 +111,7 @@ public class BookController : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Remove(Guid id)
+    public IActionResult Remove(int id)
     {
         var book = _unitOfWork.BookRepository.FindById(id);
         if (book is null)

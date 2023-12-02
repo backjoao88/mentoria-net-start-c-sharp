@@ -2,7 +2,7 @@ namespace LibraryManagerApi.Core.Entities;
 
 public class User
 {
-    public Guid Id { get; private set; }
+    public int Id { get; private set; }
     public string Name { get; private set; } = null!;
     public string Email { get; private set; } = null!;
     public bool IsDeleted { get; private set; } = false;
@@ -10,7 +10,7 @@ public class User
     {
     }
 
-    public User(Guid id, string name, string email)
+    public User(int id, string name, string email)
     {
         Id = id;
         Name = name;

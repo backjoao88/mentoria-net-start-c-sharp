@@ -4,5 +4,5 @@ namespace LibraryManagerApi.Core.Repositories;
 
 public interface IBookRepository : IRepository<Book>
 {
-    public Book? FindById(Guid Id);
+    public Book? FindById(int Id);
 }

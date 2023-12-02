@@ -68,7 +68,7 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult GetById(Guid id)
+    public IActionResult GetById(int id)
     {
         var user = _unitOfWork.UserRepository.FindById(id);
         if (user is null)
@@ -88,7 +88,7 @@ public class UserController : ControllerBase
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Update(Guid id, UserInputModel userInputModel)
+    public IActionResult Update(int id, UserInputModel userInputModel)
     {
         var user = _unitOfWork.UserRepository.FindById(id);
         if (user is null)
@@ -111,7 +111,7 @@ public class UserController : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Remove(Guid id)
+    public IActionResult Remove(int id)
     {
         var user = _unitOfWork.UserRepository.FindById(id);
         if (user is null)

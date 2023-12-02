@@ -1,19 +1,15 @@
+using LibraryManagerApi.Core.Entities;
+
 namespace LibraryManagerApi.Core.Models.ViewModels;
 
 public class BookViewModel
 {
     
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     public string Title { get; set; } = "";
     public string Author { get; set; } = "";
     public string Isbn { get; set; } = "";
     public int PublicationYear { get; set; }
-
-    public BookViewModel(string title, string author, string isbn, int publicationYear)
-    {
-        Title = title;
-        Author = author;
-        Isbn = isbn;
-        PublicationYear = publicationYear;
-    }
+    public int Quantity { get; set; } = 0;
+    public int MinQuantityAllowed { get; set; } = 0;
 }

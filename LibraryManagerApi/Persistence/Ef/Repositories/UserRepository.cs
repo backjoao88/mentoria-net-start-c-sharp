@@ -11,12 +11,12 @@ public class UserRepository : Repository<User>, IUserRepository
 
     public new IEnumerable<User> FindAll()
     {
-        return Context.Set<User>().Where(o => !o.IsDeleted).ToList();
+        return Context.Set<User>().ToList();
     }
 
-    public User? FindById(Guid id)
+    public User? FindById(int id)
     {
-        return Context.Set<User>().SingleOrDefault(o => !o.IsDeleted && o.Id == id);
+        return Context.Set<User>().SingleOrDefault(o => o.Id == id);
     }
     
 }

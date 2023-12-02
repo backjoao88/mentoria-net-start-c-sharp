@@ -2,10 +2,10 @@ namespace LibraryManagerApi.Core.Models.InputModels;
 
 public class LoanInputModel
 {
-    public Guid IdUser { get; set; }
-    public Guid IdBook { get; set; }
+    public int IdUser { get; set; }
+    public int IdBook { get; set; }
 
-    public LoanInputModel(Guid idUser, Guid idBook)
+    public LoanInputModel(int idUser, int idBook)
     {
         IdUser = idUser;
         IdBook = idBook;

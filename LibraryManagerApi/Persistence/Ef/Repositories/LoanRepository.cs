@@ -12,11 +12,17 @@ public class LoanRepository : Repository<Loan>, ILoanRepository
     
     public new IEnumerable<Loan> FindAll()
     {
-        return Context.Set<Loan>().Where(o => !o.IsDeleted).Include(o => o.User).Include(o => o.Book).ToList();
+        return Context.Set<Loan>()
+            .Include(o => o.User)
+            .Include(o => o.Book)
+            .ToList();
     }
 
-    public Loan? FindById(Guid id)
+    public Loan? FindById(int id)
     {
-        return Context.Set<Loan>().Include(o => o.User).Include(o => o.Book).SingleOrDefault(o => !o.IsDeleted && o.Id == id);
+        return Context.Set<Loan>()
+            .Include(o => o.User)
+            .Include(o => o.Book)
+            .SingleOrDefault(o => o.Id == id);
     }
 }

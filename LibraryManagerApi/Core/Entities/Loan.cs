@@ -3,10 +3,10 @@ namespace LibraryManagerApi.Core.Entities;
 
 public class Loan
 {
-    public Guid Id { get; private set; }
-    public Guid IdBook { get; private set; }
+    public int Id { get; private set; }
+    public int IdBook { get; private set; }
     public Book Book { get; private set; } = null!;
-    public Guid IdUser { get; private set; }
+    public int IdUser { get; private set; }
     public User User { get; private set; } = null!;
     public DateTime Start { get; private set; }
     public DateTime End { get; private set; }
@@ -17,9 +17,8 @@ public class Loan
     {
     }
 
-    public Loan(Guid id, Guid idBook, Book book, Guid idUser, User user, DateTime start, DateTime end, DateTime devolution)
+    public Loan(int idBook, Book book, int idUser, User user, DateTime start, DateTime end, DateTime devolution)
     {
-        Id = id;
         IdBook = idBook;
         Book = book;
         IdUser = idUser;
@@ -29,7 +28,7 @@ public class Loan
         Devolution = devolution;
         IsDeleted = false;
     }
-
+    
     public void Update(DateTime start, DateTime end, DateTime devolution)
     {
         Start = start;

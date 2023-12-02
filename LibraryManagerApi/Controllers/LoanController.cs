@@ -12,7 +12,6 @@ namespace LibraryManagerApi.Controllers;
 [Route("/api/loans")]
 public class LoanController : ControllerBase
 {
-    
     readonly IMapper _mapper;
     readonly IValidation<LoanInputModel> _validation;
     readonly IUnitOfWork _unitOfWork;
@@ -23,7 +22,7 @@ public class LoanController : ControllerBase
         _validation = validation;
         _unitOfWork = unitOfWork;
     }
-    
+
     /// <summary>
     /// Endpoint used for saving a new loan
     /// </summary>
@@ -39,6 +38,19 @@ public class LoanController : ControllerBase
         {
             return BadRequest(validationResult.Message);
         }
+
+        // controle de estoque
+        try
+        {
+            var book = _unitOfWork.BookRepository.FindById(loanInputModel.IdBook);
+            if (book != null) book.Decrease(1);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+
+        // salva o emprestimo
         var loan = _mapper.Map<LoanInputModel, Loan>(loanInputModel);
         var startDate = DateTime.Now;
         loan.Update(startDate, startDate.AddDays(7), default);
@@ -47,7 +59,7 @@ public class LoanController : ControllerBase
         var loanViewModel = _mapper.Map<Loan, LoanViewModel>(loan);
         return Created(nameof(Save), loanViewModel);
     }
-    
+
     /// <summary>
     /// Endpoint used for retrieving all loans
     /// </summary>
@@ -61,7 +73,7 @@ public class LoanController : ControllerBase
         var loansViewModel = _mapper.Map<List<LoanViewModel>>(books);
         return Ok(loansViewModel);
     }
-    
+
     /// <summary>
     /// Endpoint used for retrieving a specified loan
     /// </summary>
@@ -69,17 +81,18 @@ public class LoanController : ControllerBase
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult GetById(Guid id)
+    public IActionResult GetById(int id)
     {
         var loan = _unitOfWork.LoanRepository.FindById(id);
         if (loan is null)
         {
             return NotFound();
         }
+
         var loanViewModel = _mapper.Map<Loan, LoanViewModel>(loan);
         return Ok(loanViewModel);
     }
-    
+
     /// <summary>
     /// Endpoint used for marking a loan as returned
     /// </summary>
@@ -88,14 +101,21 @@ public class LoanController : ControllerBase
     [HttpPatch("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult PatchDevolution(Guid id)
+    public IActionResult PatchDevolution(int id)
     {
         var loan = _unitOfWork.LoanRepository.FindById(id);
         if (loan is null)
         {
             return NotFound();
         }
+
+        if (loan.Devolution != null)
+        {
+            return BadRequest("Loan already returned.");
+        }
+
         loan.Return();
+        loan.Book.Increase(1);
         _unitOfWork.Complete();
         return NoContent();
     }

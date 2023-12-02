@@ -35,7 +35,7 @@ public abstract class Program
         builder.Services.AddScoped<IValidation<BookInputModel>, BookValidation>();
         builder.Services.AddScoped<IValidation<UserInputModel>, UserValidation>();
         builder.Services.AddScoped<IValidation<LoanInputModel>, LoanValidation>();
-
+        
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(o =>
         {
