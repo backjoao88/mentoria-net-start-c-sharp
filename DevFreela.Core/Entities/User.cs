@@ -4,8 +4,9 @@ namespace DevFreela.Core.Entities;
 
 public class User : ISoftDeletable, IAuditable
 {
-    public User(string firstName, string lastName, string email, string role)
+    public User(Guid id, string firstName, string lastName, string email, string role)
     {
+        Id = id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
@@ -19,4 +20,12 @@ public class User : ISoftDeletable, IAuditable
     public string Role { get; private set; } = "";
     public bool IsDeleted { get; private set;  }
     public DateTime CreatedAt { get; private set; }
+
+    public void Update(string firstName, string lastName, string email)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Email = email;
+    }
+    
 }

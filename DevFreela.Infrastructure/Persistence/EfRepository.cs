@@ -5,7 +5,7 @@ namespace DevFreela.Infrastructure.Persistence;
 public class EfRepository<T> : IRepository<T> where T: class
 {
     
-    private readonly EfDbContext _dbContext;
+    protected readonly EfDbContext _dbContext;
 
     public EfRepository(EfDbContext dbContext)
     {
