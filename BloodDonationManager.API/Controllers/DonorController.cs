@@ -1,5 +1,6 @@
 using BloodDonationManager.Application.Commands.CreateDonor;
 using BloodDonationManager.Application.Queries.GetAllDonors;
+using BloodDonationManager.Application.Queries.GetDonorById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,14 @@ public class DonorController : ControllerBase
     {
         var getAllDonors = new GetAllDonorsQuery("");
         var donors = await _mediator.Send(getAllDonors);
+        return Ok(donors);
+    }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var getDonorByIdQuery = new GetDonorByIdQuery(id);
+        var donors = await _mediator.Send(getDonorByIdQuery);
         return Ok(donors);
     }
 }

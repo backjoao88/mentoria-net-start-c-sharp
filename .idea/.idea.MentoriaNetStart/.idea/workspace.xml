@@ -16,72 +16,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc9cd11-4576-405e-b15f-80609a4ea94f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.API/Controllers/DonorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonor/CreateDonorCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonor/CreateDonorCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonors/GetAllDonorsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonors/GetAllDonorsQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/ViewModels/DonorDetailedViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Address.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Donation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Donor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Interfaces/IDeletable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Interfaces/IIdentificable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Stock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Enums/BloodType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Enums/GenreType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Enums/RhFactorType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/IUnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Repositories/IDonationRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Repositories/IDonorRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Repositories/IRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Repositories/IStockRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Configurations/DonorConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfUnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Repositories/DonationRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Repositories/DonorRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Repositories/StockRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.API/Controllers/CustomerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Commands/CreateCustomer/CreateCustomerCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Commands/CreateCustomer/CreateCustomerCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Commands/UpdateCustomer/UpdateCustomerCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Commands/UpdateCustomer/UpdateCustomerCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Queries/GetAllCustomers/GetAllCustomersQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/Queries/GetAllCustomers/GetAllCustomersQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Application/ViewModels/SkillViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/Configurations/CustomerConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.API/Controllers/DonationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonation/CreateDonationCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonation/CreateDonationCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonations/GetAllDonationsQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonations/GetAllDonationsQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetDonorById/GetDonorByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetDonorById/GetDonorByIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Application/ViewModels/DonationDetailedViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Configurations/DonationConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MentoriaNetStart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MentoriaNetStart/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/DevFreela.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Core/DevFreela.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Core/Entities/Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/Freelancer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/Project.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/ProjectComment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/Skill.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Core/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Enums/ProjectStatus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Core/IUnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/InputModels/CustomerInputModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/InputModels/FreelancerInputModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/InputModels/ProjectInputModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/ViewModels/CustomerViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Application/ViewModels/CustomerViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/ViewModels/FreelancerViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Application/ViewModels/FreelancerViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Models/ViewModels/ProjectViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Application/ViewModels/ProjectViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Repositories/ICustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Core/Repositories/ICustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Repositories/IFreelancerRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Core/Repositories/IProjectRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/EfUnitOfWork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/Repositories/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/Repositories/CustomerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/Repositories/FreelancerRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevFreela.Infrastructure/Persistence/Repositories/ProjectRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MentoriaNetStart.sln" beforeDir="false" afterPath="$PROJECT_DIR$/MentoriaNetStart.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.API/Controllers/DonorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.API/Controllers/DonorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Application/BloodDonationManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Application/BloodDonationManager.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonor/CreateDonorCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonor/CreateDonorCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonors/GetAllDonorsQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonors/GetAllDonorsQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Application/ViewModels/DonorDetailedViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Application/ViewModels/DonorDetailedViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Donation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Core/Entities/Donation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Configurations/DonorConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Configurations/DonorConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/EfUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Repositories/DonationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BloodDonationManager.Infrastructure/Persistence/Ef/Repositories/DonationRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,17 +49,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/14a0d2e1f00a4497b14b38342dd1d8641e38a0/e8/47f09b4a/02000019pdb133.il" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2576435341357d329c6a079614792a6903e69413597f30d359d8ab6b93cc23/ControllerAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4a295deb4392367cf586cf2b168b560cbaf411901d46db3a04ec9f91e6/MvcCoreMvcCoreBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4a4e32cea57c17f7bee73f3df362944a221b8f84d193ae366a93bb192bbd/MvcServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/794bcfedceb3c6d957fbddf0e1c9a04afca77f9b5470c6859466cfba35e1ddb1/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/818ee61bbe4e61cc20fccdd6c4bc24e953557a6496e361fc85eb0d4b61d345/MvcBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81a3bcf4bb6aa5e62a9839f9cfeeba6126496f4fa07d1e57b27a5176e42525/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/952cffeba8cbf1bdd2ff8e57b5e9da71ed88b94b5aa4d680156a405f359c6096/HttpPutAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7268004cea411c815a7ab3cb4144fbb696c52cfe11670e8ab0d8b26fa24/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e74356f198b598e97eaeea83e8b7b1f2bfe27c0a39fedf86bb7dc44827fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fe74eccc75a778b7d73e1d18cbc6648d927ae450881210cddc8c823fbc958/IModelBinderFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b08945fe694ada8e369b01cdc215ea1fd628/34/df4ac0bf/EntityTypeBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonor/CreateDonorCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryManagerApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -307,17 +254,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BloodDonationManager.API/Controllers/DonorController.cs</url>
-          <line>21</line>
-          <properties documentPath="C:\Users\joaob\RiderProjects\mentoria-net-start-c-sharp\BloodDonationManager.API\Controllers\DonorController.cs" initialLine="21" containingFunctionPresentation="Method 'Post'">
+          <url>file://$PROJECT_DIR$/BloodDonationManager.Application/Queries/GetAllDonations/GetAllDonationsQueryHandler.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\Users\Back\RiderProjects\mentoria-net-start-c-sharp\BloodDonationManager.Application\Queries\GetAllDonations\GetAllDonationsQueryHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'">
             <startOffsets>
-              <option value="548" />
+              <option value="589" />
             </startOffsets>
             <endOffsets>
-              <option value="602" />
+              <option value="657" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonation/CreateDonationCommandHandler.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\Back\RiderProjects\mentoria-net-start-c-sharp\BloodDonationManager.Application\Commands\CreateDonation\CreateDonationCommandHandler.cs" initialLine="21" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="893" />
+            </startOffsets>
+            <endOffsets>
+              <option value="950" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BloodDonationManager.Application/Commands/CreateDonation/CreateDonationCommandHandler.cs</url>
+          <line>21</line>
+          <properties documentPath="C:\Users\Back\RiderProjects\mentoria-net-start-c-sharp\BloodDonationManager.Application\Commands\CreateDonation\CreateDonationCommandHandler.cs" initialLine="21" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="630" />
+            </startOffsets>
+            <endOffsets>
+              <option value="707" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

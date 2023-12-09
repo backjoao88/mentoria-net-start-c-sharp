@@ -11,10 +11,10 @@ public static class DependencyInjection
     public static IServiceCollection AddPersistence(this IServiceCollection services)
     {
         services.AddDbContext<EfDbContext>();
-        services.AddScoped<IUnitOfWork, EfUnitOfWork>();
         services.AddScoped<IDonorRepository, DonorRepository>();
         services.AddScoped<IDonationRepository, DonationRepository>();
         services.AddScoped<IStockRepository, StockRepository>();
+        services.AddScoped<IUnitOfWork, EfUnitOfWork>();
         return services;
     }
 }

@@ -30,6 +30,7 @@ public class CreateDonorCommandHandler : IRequestHandler<CreateDonorCommand, Don
         await _unitOfWork.DonorRepository.SaveAsync(donor);
         await _unitOfWork.CompleteAsync();
         var donorViewModel = new DonorDetailedViewModel(
+            donor.Id,
             donor.FirstName, 
             donor.LastName,
             donor.Email,

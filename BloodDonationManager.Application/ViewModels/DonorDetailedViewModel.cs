@@ -5,8 +5,9 @@ namespace BloodDonationManager.Application.ViewModels;
 
 public class DonorDetailedViewModel
 {
-    public DonorDetailedViewModel(string firstName, string lastName, string email, DateTime birth, int weight, GenreType genre, BloodType bloodType, RhFactorType fatorRhType, Address address)
+    public DonorDetailedViewModel(int id,string firstName, string lastName, string email, DateTime birth, int weight, GenreType genre, BloodType bloodType, RhFactorType fatorRhType, Address address)
     {
+        Id = id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
@@ -17,7 +18,8 @@ public class DonorDetailedViewModel
         FatorRhType = fatorRhType;
         Address = address;
     }
-
+    
+    public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }

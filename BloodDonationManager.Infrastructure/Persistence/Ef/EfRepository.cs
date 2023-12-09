@@ -7,44 +7,44 @@ namespace BloodDonationManager.Infrastructure.Persistence.Ef;
 public class EfRepository<T> : IRepository<T> where T : class, IIdentificable, IDeletable
 {
 
-    private readonly EfDbContext _efDbContext;
+    protected readonly EfDbContext EfDbContext;
 
     public EfRepository(EfDbContext efDbContext)
     {
-        _efDbContext = efDbContext;
+        EfDbContext = efDbContext;
     }
 
     public async Task SaveAsync(T data)
     {
-        await _efDbContext.Set<T>().AddAsync(data);
+        await EfDbContext.Set<T>().AddAsync(data);
     }
 
     public void Save(T data)
     {
-        _efDbContext.Set<T>().Add(data);
+        EfDbContext.Set<T>().Add(data);
     }
 
     public async Task<List<T>> FindAllAsync()
     {
-        var data = await _efDbContext.Set<T>().ToListAsync();
+        var data = await EfDbContext.Set<T>().ToListAsync();
         return data;
     }
 
     public List<T> FindAll()
     {
-        var data = _efDbContext.Set<T>().ToList();
+        var data = EfDbContext.Set<T>().ToList();
         return data;
     }
     
     public async Task<T?> FindByIdAsync(int id)
     {
-        var data = await _efDbContext.Set<T>().SingleOrDefaultAsync(o => o.Id == id);
+        var data = await EfDbContext.Set<T>().SingleOrDefaultAsync(o => o.Id == id);
         return data;
     }
 
     public T? FindById(int id)
     {
-        var data = _efDbContext.Set<T>().SingleOrDefault(o => o.Id == id);
+        var data = EfDbContext.Set<T>().SingleOrDefault(o => o.Id == id);
         return data;
     }
 

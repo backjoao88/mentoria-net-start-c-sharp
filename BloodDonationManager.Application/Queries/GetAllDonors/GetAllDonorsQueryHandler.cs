@@ -17,6 +17,7 @@ public class GetAllDonorsQueryHandler : IRequestHandler<GetAllDonorsQuery, List<
     {
         var donors = await _unitOfWork.DonorRepository.FindAllAsync();
         var donorsViewModel = donors.Select(d => new DonorDetailedViewModel(
+            d.Id,
             d.FirstName, 
             d.LastName, 
             d.Email, 

@@ -11,21 +11,12 @@ public class DonorConfiguration : IEntityTypeConfiguration<Donor>
     public void Configure(EntityTypeBuilder<Donor> builder)
     {
         builder.HasKey(o => o.Id);
-        builder.OwnsOne(o => o.Address).WithOwner().HasForeignKey(o => o.IdDonor);
-        builder.OwnsOne(o => o.Address)
-            .Property(o => o.Street)
-            .IsRequired();
-        builder.OwnsOne(o => o.Address)
-            .Property(o => o.City)
-            .IsRequired();
-        builder.OwnsOne(o => o.Address)
-            .Property(o => o.Cep)
-            .IsRequired();
-        builder.OwnsOne(o => o.Address)
-            .Property(o => o.State)
-            .IsRequired();
         
+        // key navigation
+        builder.OwnsOne(o => o.Address).WithOwner().HasForeignKey(o => o.IdDonor);
+
         int id = 0;
+        
         // Fake data for donors
         var fakerDonor = new Faker<Donor>("pt_BR")
             .RuleFor(o => o.Id, f => ++id)
@@ -38,16 +29,23 @@ public class DonorConfiguration : IEntityTypeConfiguration<Donor>
             .RuleFor(o => o.Weight, f => f.PickRandom<int>(45, 60, 67, 90, 80, 102, 49, 56))
             .RuleFor(o => o.FirstName, f => f.Person.FirstName)
             .RuleFor(o => o.LastName, f => f.Person.LastName);
-        var fakeDonor = fakerDonor.Generate(1);
+                
+        var fakeDonor = fakerDonor.Generate(15);
         builder.HasData(fakeDonor);
-        // var fakerAddress = new Faker<Address>("pt_BR")
-        //     .RuleFor(o => o.IdDonor, 1)
-        //     .RuleFor(o => o.Street, f => f.Address.StreetAddress())
-        //     .RuleFor(o => o.City, f => f.Address.City())
-        //     .RuleFor(o => o.Cep, f => f.Address.ZipCode())
-        //     .RuleFor(o => o.State, f => f.Address.State());
-        // var fakeAddresses = fakerAddress.Generate(1);
-        //
-        //
+
+        // Fake data for addresses
+
+        foreach (var donor in fakeDonor)
+        {
+            var fakeAddress = new Faker<Address>("pt_BR")
+                .RuleFor(o => o.IdDonor, f => donor.Id)
+                .RuleFor(o => o.City, f => f.Person.Address.City)
+                .RuleFor(o => o.Cep, f => f.Person.Address.ZipCode)
+                .RuleFor(o => o.Street, f => f.Person.Address.Street)
+                .RuleFor(o => o.State, f => f.Person.Address.State)
+                .Generate(1);
+            builder.OwnsOne(o => o.Address).HasData(fakeAddress);
+        }
+        
     }
 }

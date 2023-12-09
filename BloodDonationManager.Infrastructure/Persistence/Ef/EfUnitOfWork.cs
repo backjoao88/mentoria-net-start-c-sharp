@@ -11,6 +11,7 @@ public class EfUnitOfWork: IUnitOfWork
         DonationRepository = donationRepository;
         StockRepository = stockRepository;
         _efDbContext = efDbContext;
+        _efDbContext.Database.EnsureCreated();
     }
 
     private readonly EfDbContext _efDbContext;

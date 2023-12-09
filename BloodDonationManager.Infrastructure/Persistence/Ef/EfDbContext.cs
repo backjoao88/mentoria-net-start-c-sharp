@@ -6,9 +6,9 @@ namespace BloodDonationManager.Infrastructure.Persistence.Ef;
 
 public class EfDbContext : DbContext
 {
-    public DbSet<Donor> Donors { get; } = null!;
-    public DbSet<Donation> Donations { get; } = null!;
-    public DbSet<Stock> BloodStocks { get; } = null!;
+    public DbSet<Donor> Donors { get; set;  } = null!;
+    public DbSet<Donation> Donations { get; set;  } = null!;
+    public DbSet<Stock> BloodStocks { get; set;  } = null!;
 
     public EfDbContext(DbContextOptions options) : base(options)
     {
@@ -17,6 +17,7 @@ public class EfDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new DonorConfiguration());
+        modelBuilder.ApplyConfiguration(new DonationConfiguration());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
