@@ -1,0 +1,14 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "$": [
+      "'\"' is invalid after a value. Expected either ',', '}', or ']'. Path: $ | LineNumber: 1 | BytePositionInLine: 51."
+    ],
+    "createDonationCommand": [
+      "The createDonationCommand field is required."
+    ]
+  },
+  "traceId": "00-a83f0d22e11b678308fe1b48e1b766ed-33f4d7d8767fde0b-00"
+}

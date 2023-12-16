@@ -1,0 +1,14 @@
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "createDonationCommand": [
+      "The createDonationCommand field is required."
+    ],
+    "$.idDonor": [
+      "The JSON value could not be converted to BloodManager.Application.Commands.CreateDonation.CreateDonationCommand. Path: $.idDonor | LineNumber: 1 | BytePositionInLine: 14."
+    ]
+  },
+  "traceId": "00-a98929bca1486142f93ab958a91a0bd9-84d3e7f4d65fe18d-00"
+}

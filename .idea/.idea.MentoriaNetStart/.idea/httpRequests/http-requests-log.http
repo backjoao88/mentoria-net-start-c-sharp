@@ -1,0 +1,796 @@
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "5b4bd8d4-19d0-4a81-a1d1-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T092055.400.txt
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T092038.200.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "b80d1618-738b-4b39-a1cf-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T092031.400.txt
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T091945.200.json
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091940.400.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091930.201.json
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 308
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "joaoback@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091925.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "b80d1618-738b-4b39-a1cf-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T091858.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "b80d1618-738b-4b39-a1cf-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T091810.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "b80d1618-738b-4b39-a1cf-08dbfe30d5ae",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T091806.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "b80d1618-738b-4b39-a1cf-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T091801.400.txt
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T091757.200.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "ecd4264c-38b6-41a5-a1d0-08dbfe30d5ad",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T091747.200.json
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T091739.200.json
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T091644.200.json
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 309
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "joaoback@gmail.com",
+  "birth": "1999-08-01",
+  "weight": 100,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091640.201.json
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 312
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "joaob254ack@gmail.com",
+  "birth": "1999-08-01",
+  "weight": 100,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091635.400.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 312
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "joaob254ack@gmail.com",
+  "birth": "2010-08-01",
+  "weight": 100,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-16T091630.201.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998d",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090303.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998e",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090259.200.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998e",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090238.400.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998d",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090219.500.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998d",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090203.500.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998d",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090158.500.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998d",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090138.500.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 76
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998e",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090129.200.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 77
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": "350505af-07dc-417b-a706-08dbfdbc998e"",
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090123.400.json
+
+###
+
+GET http://localhost:5092/api/donor
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-16T090110.200.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090103.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090036.400.json
+
+###
+
+POST http://localhost:5092/api/stocks
+Content-Type: application/json
+Content-Length: 84
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "description": "TESTE DE ARMAZENAMENTO",
+  "bloodType": 0,
+  "rhFactorType": 1
+}
+
+<> 2023-12-16T090017.201.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 300
+}
+
+<> 2023-12-16T090003.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085901.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085739.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085651.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 18
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1
+}
+
+<> 2023-12-16T085619.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 18
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1
+}
+
+<> 2023-12-16T085554.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 18
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1
+}
+
+<> 2023-12-16T085504.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085225.400.json
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085158.500.txt
+
+###
+
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+Content-Length: 39
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idDonor": 1,
+  "quantityMl": 430
+}
+
+<> 2023-12-16T085125.500.txt
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": "31d14747-ba86-4505-7e5c-08dbfce8edc4"
+}
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": "31d14747-ba86-4505-7e5c-08dbfce8edc4"
+}
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-15T194116.200.json
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 312
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "joaob254ack@gmail.com",
+  "birth": "1999-08-01",
+  "weight": 100,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-15T193846.400.txt
+
+###
+
+GET http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-15T193836.200.json
+
+###
+
