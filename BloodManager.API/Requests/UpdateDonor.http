@@ -1,0 +1,7 @@
+PUT http://localhost:5092/api/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
+Content-Type: application/json
+
+{
+  "id": "31d14747-ba86-4505-7e5c-08dbfce8edc4",
+  "firstName": "Teste"
+}

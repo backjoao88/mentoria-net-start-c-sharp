@@ -1,0 +1,7 @@
+POST http://localhost:5092/api/donation
+Content-Type: application/json
+
+{
+  "idDonor": "5b4bd8d4-19d0-4a81-a1d1-08dbfe30d5ad",
+  "quantityMl": 300
+}

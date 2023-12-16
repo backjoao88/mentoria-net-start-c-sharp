@@ -1,0 +1,3 @@
+GET http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e
+Accept: application/json
+###

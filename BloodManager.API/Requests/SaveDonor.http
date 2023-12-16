@@ -1,0 +1,19 @@
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}

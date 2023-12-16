@@ -1,0 +1,7 @@
+PATCH http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e/increase
+Content-Type: application/json
+
+{
+  "id": "427589cd-efbd-4d20-0e42-08dbfdb7298e",
+  "quantityMl": 5000
+}

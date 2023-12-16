@@ -1,0 +1,8 @@
+POST http://localhost:5092/api/stocks
+Content-Type: application/json
+
+{
+  "description": "TESTE DE ARMAZENAMENTO",
+  "bloodType": 0,
+  "rhFactorType": 1
+}
