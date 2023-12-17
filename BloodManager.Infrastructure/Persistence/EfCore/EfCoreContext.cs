@@ -20,6 +20,6 @@ public class EfCoreContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-            "Server=BACK-PC\\SQLEXPRESS;User=sa;Database=donationdb;Password=joao;TrustServerCertificate=true;");
+            "Server=DESKTOP-N7P7NAN\\SQLEXPRESS01;User=sa;Database=donation-db;Password=joao#123;TrustServerCertificate=true;");
     }
 }

@@ -17,7 +17,7 @@ public class DonorRepository : EfCoreRepository<Donor>, IDonorRepository
         {
             return null;
         }
-        var lastDonation = donations.Max(o => o.DonationDate);
+        var lastDonation = donations.MaxBy(o => o.DonationDate);
         return lastDonation;
     }
 

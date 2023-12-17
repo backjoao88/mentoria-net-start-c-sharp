@@ -1,3 +1,171 @@
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T103317.201.json
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T103037-1.500.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T103037.500.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T103033.500.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T103013.500.txt
+
+###
+
+POST http://localhost:5092/api/donor
+Content-Type: application/json
+Content-Length: 304
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "João",
+  "lastName": "Paulo Back",
+  "email": "back@gmail.com",
+  "birth": "1995-08-01",
+  "weight": 70,
+  "genre": 0,
+  "bloodType": 1,
+  "rhFactorType": 1,
+  "address": {
+    "street": "123",
+    "city": "Rio do Sul",
+    "state": "Santa Catarina",
+    "postalCode": "88400500"
+  }
+}
+
+<> 2023-12-17T102553.500.txt
+
+###
+
 POST http://localhost:5092/api/donation
 Content-Type: application/json
 Content-Length: 76
@@ -719,78 +887,6 @@ Accept: application/json
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
 Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-GET http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-15T194116.200.json
-
-###
-
-DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-DELETE http://localhost:5092/donor/31d14747-ba86-4505-7e5c-08dbfce8edc4
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-POST http://localhost:5092/api/donor
-Content-Type: application/json
-Content-Length: 312
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "firstName": "João",
-  "lastName": "Paulo Back",
-  "email": "joaob254ack@gmail.com",
-  "birth": "1999-08-01",
-  "weight": 100,
-  "genre": 0,
-  "bloodType": 1,
-  "rhFactorType": 1,
-  "address": {
-    "street": "123",
-    "city": "Rio do Sul",
-    "state": "Santa Catarina",
-    "postalCode": "88400500"
-  }
-}
-
-<> 2023-12-15T193846.400.txt
-
-###
-
-GET http://localhost:5092/api/stocks/427589cd-efbd-4d20-0e42-08dbfdb7298e
-Accept: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-12-15T193836.200.json
 
 ###
 
